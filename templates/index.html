@@ -19,9 +19,16 @@
             const list = document.getElementById('taskList');
             list.innerHTML = '';
 
-            data.forEach((task, index) => {
+            data.forEach((task) => {
                 const li = document.createElement('li');
-                li.innerHTML = `${task} <button onclick="deleteTask(${index})">Delete</button>`;
+
+                li.innerHTML = `
+                    ${task.task}
+                    <button onclick="deleteTask(${task.id})">
+                        Delete
+                    </button>
+                `;
+
                 list.appendChild(li);
             });
         }
